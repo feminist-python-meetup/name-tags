@@ -64,13 +64,16 @@ squiggly_tag = soup.find(id="squiggly")
 
 points = []
 start_x = 3
-x_position = 23 / len(name)
+start_y = 3
+max_length = 23
+max_height = 15
+x_position = max_length / len(name)
 for i, char in enumerate(name):
     x = i * x_position + start_x
-    y = ord(char) % 15 + 3
+    y = ord(char) % max_height + start_y
     point = "{},{}".format(x, y)
     points.append(point)
-generated_squiggly = "M 3,3 " + " ".join(points) + " 26,18"
+generated_squiggly = "M " + str(start_x) + "," + str(start_y) + " " + " ".join(points)
 
 squiggly_tag["d"] = generated_squiggly
 
