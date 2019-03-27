@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from bs4 import BeautifulSoup
 import argparse
@@ -12,6 +13,14 @@ generative - helper functions -> getting unicode -> scaling?
 '''
 dealing with command line arguments, you don't really have to worry about this part!
 '''
+
+def check_hexadecimal(value):
+    try:
+        numeric = int(value,16)
+    except ValueError:
+        raise argparse.ArgumentTypeError("%s is not a valid hexadecimal value" % value)
+    return numeric
+
 parser = argparse.ArgumentParser(description='Make your own pronoun tag!')
 parser.add_argument('--template', type=str, help='svg file containing your template for the name tag', required=True)
 parser.add_argument('--colors', help='file that defines the mapping between the colors and pronouns. needs to be a json file with the following form {"pronoun":"hex-code"}',
@@ -19,6 +28,7 @@ parser.add_argument('--colors', help='file that defines the mapping between the 
 parser.add_argument('--name', type=str, help='your name', nargs="?", const=1, default="Barbara") # like Barbara Liskov as in the Liskov substitution principle
 parser.add_argument('--pronouns', type=str, help='your pronouns', nargs="?", const=1, default="she, her, hers")
 parser.add_argument('--output', type=str, help='output file for your rendered name tag', nargs="?", const=1, default="rendered/output.svg")
+parser.add_argument('--fingerprint', help='Encryption Key Fingerprint', nargs="?", const=1, type=check_hexadecimal)
 
 args = parser.parse_args()
 color_map = json.load(args.colors)
@@ -26,6 +36,7 @@ name = args.name
 pronouns = args.pronouns 
 template_file = args.template 
 output_file = args.output 
+fingerprint = args.fingerprint
 
 '''
 load the specified template for the name tag from templates/ folder
@@ -76,6 +87,26 @@ for i, char in enumerate(name):
 generated_squiggly = "M " + " ".join(points)
 
 squiggly_tag["d"] = generated_squiggly
+
+if fingerprint is not None:
+    hexstring = hex(fingerprint)[2:]
+    total_bytes = int(len(hexstring)/2)
+    padding = (3 - total_bytes % 3) % 3
+    hexstring = hexstring + (padding * 2 * '8')
+    hashboxes = int(len(hexstring)/6)
+    hash_height = 2.5
+    hash_width = 79/hashboxes
+    hash_origin = [2.75,38.12] # originX, originY 
+    for idx in range(0, hashboxes):
+        hash_tag = soup.new_tag("rect")
+        hash_tag["id"] = "hash-" + str(idx)
+        hash_tag["height"] = hash_height
+        hash_tag["width"] = hash_width
+        hash_tag["x"] = idx * hash_width + hash_origin[0]
+        hash_tag["y"] = hash_origin[1]
+        color = "#" + hexstring[(idx*6):(idx+1)*6]
+        hash_tag["style"] = "fill:" + color +";stroke:none;"
+        squiggly_tag.insert_after(hash_tag)
 
 
 '''
