@@ -73,7 +73,7 @@ for i, char in enumerate(name):
     y = ord(char) % max_height + start_y
     point = "{},{}".format(x, y)
     points.append(point)
-generated_squiggly = "M " + str(start_x) + "," + str(start_y) + " " + " ".join(points)
+generated_squiggly = "M " + " ".join(points)
 
 squiggly_tag["d"] = generated_squiggly
 
