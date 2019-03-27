@@ -88,23 +88,26 @@ generated_squiggly = "M " + " ".join(points)
 
 squiggly_tag["d"] = generated_squiggly
 
+breakUpBy = 6
 if fingerprint is not None:
     hexstring = hex(fingerprint)[2:]
-    total_bytes = int(len(hexstring)/2)
-    padding = (3 - total_bytes % 3) % 3
-    hexstring = hexstring + (padding * 2 * '8')
-    hashboxes = int(len(hexstring)/6)
+    colorArray = [hexstring[i:i+breakUpBy] for i in range(0, len(hexstring), breakUpBy)]
+    lastColor = colorArray[-1]
+    colorArray.remove(colorArray[-1])
+    lastColor = lastColor + (breakUpBy-len(lastColor)) * '8'
+    colorArray.append(lastColor)
+    hashboxes = len(colorArray)
     hash_height = 2.5
     hash_width = 79/hashboxes
     hash_origin = [2.75,38.12] # originX, originY 
-    for idx in range(0, hashboxes):
+    for idx, color in enumerate(colorArray):
         hash_tag = soup.new_tag("rect")
         hash_tag["id"] = "hash-" + str(idx)
         hash_tag["height"] = hash_height
         hash_tag["width"] = hash_width
         hash_tag["x"] = idx * hash_width + hash_origin[0]
         hash_tag["y"] = hash_origin[1]
-        color = "#" + hexstring[(idx*6):(idx+1)*6]
+        color = "#" + color
         hash_tag["style"] = "fill:" + color +";stroke:none;"
         squiggly_tag.insert_after(hash_tag)
 
