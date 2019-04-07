@@ -64,3 +64,8 @@ The color mapping and name tags were inspired by these [name tags](https://now.u
   "ze, hir, hirs": "5fa0c0" 
 }
 ```
+- ![#ffd200](https://placehold.it/15/ffd200/000000?text=+) `#ffd200`
+- ![#ef761b](https://placehold.it/15/ef761b/000000?text=+) `#ef761b`
+- ![#df1427](https://placehold.it/15/df1427/000000?text=+) `#df1427`
+- ![#4e2456](https://placehold.it/15/4e2456/000000?text=+) `#4e2456`
+- ![#5fa0c0](https://placehold.it/15/5fa0c0/000000?text=+) `#5fa0c0`
