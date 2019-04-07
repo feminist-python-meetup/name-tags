@@ -3,12 +3,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from bs4 import BeautifulSoup
 import argparse
 import json
-
-'''
-todo:
-make readme
-generative - helper functions -> getting unicode -> scaling?
-'''
+import hashlib
 
 '''
 dealing with command line arguments, you don't really have to worry about this part!
@@ -25,18 +20,22 @@ parser = argparse.ArgumentParser(description='Make your own pronoun tag!')
 parser.add_argument('--template', type=str, help='svg file containing your template for the name tag', required=True)
 parser.add_argument('--colors', help='file that defines the mapping between the colors and pronouns. needs to be a json file with the following form {"pronoun":"hex-code"}',
         nargs="?", const=1, default="color_mapping.json", type=argparse.FileType("r"))
+parser.add_argument('--defaultcolor', type=str,  help='color that is used if no mapping for pronoun is defined in the mapping file', nargs="?", default="009c48")
 parser.add_argument('--name', type=str, help='your name', nargs="?", const=1, default="Barbara") # like Barbara Liskov as in the Liskov substitution principle
 parser.add_argument('--pronouns', type=str, help='your pronouns', nargs="?", const=1, default="she, her, hers")
 parser.add_argument('--output', type=str, help='output file for your rendered name tag', nargs="?", const=1, default="rendered/output.svg")
 parser.add_argument('--fingerprint', help='Encryption Key Fingerprint', nargs="?", const=1, type=check_hexadecimal)
+parser.add_argument('--gradient', help='flag for gradient or not', nargs="?", default=False, type=bool)
 
 args = parser.parse_args()
 color_map = json.load(args.colors)
+default_color = args.defaultcolor
 name = args.name 
 pronouns = args.pronouns 
 template_file = args.template 
 output_file = args.output 
 fingerprint = args.fingerprint
+gradient = args.gradient
 
 '''
 load the specified template for the name tag from templates/ folder
@@ -64,7 +63,7 @@ find the backgound and change the color of the "fill" element to the color accor
 '''
 
 background_tag = soup.find(id="background-rectangle")
-background = background_tag["style"].replace("fill:#ffdd55", "fill:#{}".format(color_map.get(pronouns, "009c48")))
+background = background_tag["style"].replace("fill:#ffdd55", "fill:#{}".format(color_map.get(pronouns, default_color)))
 background_tag["style"] = background
 
 '''
@@ -87,6 +86,10 @@ for i, char in enumerate(name):
 generated_squiggly = "M " + " ".join(points)
 
 squiggly_tag["d"] = generated_squiggly
+
+'''
+add barcode under name block if user gave a public key
+'''
 
 breakUpBy = 6
 if fingerprint is not None:
@@ -111,6 +114,24 @@ if fingerprint is not None:
         hash_tag["style"] = "fill:" + color +";stroke:none;"
         squiggly_tag.insert_after(hash_tag)
 
+'''
+make pretty gradient in background by hashing the name and using the hash for 3 hex codes!
+'''
+
+if gradient:
+   pretty_gradient_tag = soup.find(id="prettyGradient")
+   if pretty_gradient_tag is not None:
+        hashed_name = hashlib.sha1(name.encode('utf-8')).hexdigest()
+        color_one, color_two, color_three = color_map.get(pronouns, default_color), hashed_name[:3], hashed_name[3:6]
+    
+        top_left = soup.find(id="topLeft")
+        top_left["style"] = top_left["style"].replace("stop-color:#ff0000", "stop-color:#{}".format(color_one))
+    
+        middle = soup.find(id="middle")
+        middle["style"] = middle["style"].replace("stop-color:#00cc99", "stop-color:#{}".format(color_two))
+    
+        bottom_right = soup.find(id="bottomRight")
+        bottom_right["style"] = bottom_right["style"].replace("stop-color:#ff99ff", "stop-color:#{}".format(color_three))
 
 '''
 write the created/rendered svg to the output file so that you can admire your name tag in inkscape!
