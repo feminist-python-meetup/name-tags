@@ -16,16 +16,16 @@ def check_hexadecimal(value):
         raise argparse.ArgumentTypeError("%s is not a valid hexadecimal value" % value)
     return numeric
 
-parser = argparse.ArgumentParser(description='Make your own pronoun tag!')
-parser.add_argument('--template', type=str, help='svg file containing your template for the name tag', required=True)
-parser.add_argument('--colors', help='file that defines the mapping between the colors and pronouns. needs to be a json file with the following form {"pronoun":"hex-code"}',
-        nargs="?", const=1, default="color_mapping.json", type=argparse.FileType("r"))
-parser.add_argument('--defaultcolor', type=str,  help='color that is used if no mapping for pronoun is defined in the mapping file', nargs="?", default="009c48")
-parser.add_argument('--name', type=str, help='your name', nargs="?", const=1, default="Barbara") # like Barbara Liskov as in the Liskov substitution principle
-parser.add_argument('--pronouns', type=str, help='your pronouns', nargs="?", const=1, default="she, her, hers")
-parser.add_argument('--output', type=str, help='output file for your rendered name tag', nargs="?", const=1, default="rendered/output.svg")
-parser.add_argument('--fingerprint', help='Encryption Key Fingerprint', nargs="?", const=1, type=check_hexadecimal)
-parser.add_argument('--gradient', help='flag for gradient or not', nargs="?", default=False, type=bool)
+parser = argparse.ArgumentParser(description='Make your own name tag for the Feminist Python meetup!')
+parser.add_argument('--template', type=str, help='name of the svg file containing your template (in the templates/ directory)', required=True)
+parser.add_argument('--colors', help='file that defines the mapping between the colors and pronouns. Should be a json file with the following form {"pronoun":"hex-code"}',
+        nargs="?", default="color_mapping.json", type=argparse.FileType("r"))
+parser.add_argument('--defaultcolor', type=str, help='the hex-code of the color that is used if no mapping for pronoun is defined in the mapping file', nargs="?", default="009c48")
+parser.add_argument('--name', type=str, help='your name', nargs="?", default="Barbara") # like Barbara Liskov as in the Liskov substitution principle
+parser.add_argument('--pronouns', type=str, help='your pronouns', nargs="?", default="they, them, theirs")
+parser.add_argument('--output', type=str, help='path to the output file for your rendered name tag', nargs="?", default="rendered/output.svg")
+parser.add_argument('--fingerprint', help='Encryption Key Fingerprint', nargs="?", type=check_hexadecimal)
+parser.add_argument('--gradient', help='flag for dynamically created gradient background', nargs="?", default=False, type=bool)
 
 args = parser.parse_args()
 color_map = json.load(args.colors)
