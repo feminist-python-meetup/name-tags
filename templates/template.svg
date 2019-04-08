@@ -57,8 +57,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.5181628"
-     inkscape:cx="-58.814794"
-     inkscape:cy="21.699104"
+     inkscape:cx="-69.010983"
+     inkscape:cy="22.357795"
      inkscape:document-units="mm"
      inkscape:current-layer="svg8"
      showgrid="false"
@@ -100,26 +100,28 @@
      y="22.1812" />
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.40830231px;line-height:8.38746452px;font-family:DinC;-inkscape-font-specification:'DinC Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.35281134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-     x="42.408123"
-     y="12.221683"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.40823078px;line-height:8.38746452px;font-family:monospace;-inkscape-font-specification:'monospace, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.35281134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="41.536732"
+     y="16.404369"
      id="text5936"><tspan
        sodipodi:role="line"
-       x="42.408123"
-       y="12.221683"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';text-align:center;text-anchor:middle;stroke-width:0.35281134px"
+       x="41.536732"
+       y="16.404369"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.40823078px;font-family:monospace;-inkscape-font-specification:'monospace, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35281134px"
        id="tspan5938">Hello</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.92121506px;line-height:4.38724375px;font-family:monospace;-inkscape-font-specification:monospace;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.18454556px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="42.611736"
-     y="17.398869"
-     id="text5944"><tspan
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.86291671px;line-height:4.38724375px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.18454556px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="42.088902"
+     y="20.187326"
+     id="text5944"
+     inkscape:transform-center-x="-0.17427863"
+     inkscape:transform-center-y="-1.0456718"><tspan
        sodipodi:role="line"
        id="tspan5942"
-       x="42.611736"
-       y="17.398869"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;text-align:center;text-anchor:middle;stroke-width:0.18454556px">my name is</tspan></text>
+       x="42.088902"
+       y="20.187326"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.86291671px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.18454556px">my name is</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.66606712px;line-height:9.50875664px;font-family:monospace;-inkscape-font-specification:monospace;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.39997751px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
