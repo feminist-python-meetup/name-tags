@@ -25,7 +25,7 @@ parser.add_argument('--name', type=str, help='your name', nargs="?", default="Ba
 parser.add_argument('--pronouns', type=str, help='your pronouns', nargs="?", default="they, them, theirs")
 parser.add_argument('--output', type=str, help='path to the output file for your rendered name tag', nargs="?", default="rendered/output.svg")
 parser.add_argument('--fingerprint', help='Encryption Key Fingerprint', nargs="?", type=check_hexadecimal)
-parser.add_argument('--gradient', help='flag for dynamically created gradient background', nargs="?", default=False, type=bool)
+parser.add_argument('--gradient', help='flag for dynamically created gradient background',action="store_true")
 
 args = parser.parse_args()
 color_map = json.load(args.colors)
