@@ -58,14 +58,14 @@ The color mapping and name tags were inspired by these [name tags](https://now.u
 ```
 {
   "she, her, hers": "ffd200",
-  "he, him, his": "ef761b" ,
-  "they, them, theirs": "df1427",
-  "xe, xem, xyrs": "4e2456",
-  "ze, hir, hirs": "5fa0c0" 
+  "he, him, his": "e69f00" ,
+  "they, them, theirs": "d55e00",
+  "xe, xem, xyrs": "cc79a7",
+  "ze, hir, hirs": "56b4e9" 
 }
 ```
 - ![#ffd200](https://placehold.it/15/ffd200/000000?text=+) `#ffd200`
-- ![#ef761b](https://placehold.it/15/ef761b/000000?text=+) `#ef761b`
-- ![#df1427](https://placehold.it/15/df1427/000000?text=+) `#df1427`
-- ![#4e2456](https://placehold.it/15/4e2456/000000?text=+) `#4e2456`
-- ![#5fa0c0](https://placehold.it/15/5fa0c0/000000?text=+) `#5fa0c0`
+- ![#e69f00](https://placehold.it/15/e69f00/000000?text=+) `#e69f00`
+- ![#d55e00](https://placehold.it/15/d55e00/000000?text=+) `#d55e00`
+- ![#cc79a7](https://placehold.it/15/cc79a7/000000?text=+) `#cc79a7`
+- ![#56b4e9](https://placehold.it/15/56b4e9/000000?text=+) `#56b4e9`
