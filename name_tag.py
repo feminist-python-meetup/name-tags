@@ -20,7 +20,7 @@ parser = argparse.ArgumentParser(description='Make your own name tag for the Fem
 parser.add_argument('--template', type=str, help='name of the svg file containing your template (in the templates/ directory)', required=True)
 parser.add_argument('--colors', help='file that defines the mapping between the colors and pronouns. Should be a json file with the following form {"pronoun":"hex-code"}',
         nargs="?", default="color_mapping.json", type=argparse.FileType("r"))
-parser.add_argument('--defaultcolor', type=str, help='the hex-code of the color that is used if no mapping for pronoun is defined in the mapping file', nargs="?", default="009c48")
+parser.add_argument('--defaultcolor', type=str, help='the hex-code of the color that is used if no mapping for pronoun is defined in the mapping file', nargs="?", default="009e73")
 parser.add_argument('--name', type=str, help='your name', nargs="?", default="Barbara") # like Barbara Liskov as in the Liskov substitution principle
 parser.add_argument('--pronouns', type=str, help='your pronouns', nargs="?", default="they, them, theirs")
 parser.add_argument('--output', type=str, help='path to the output file for your rendered name tag', nargs="?", default="rendered/output.svg")
