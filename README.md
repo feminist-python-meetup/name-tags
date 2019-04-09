@@ -143,5 +143,24 @@ The color mapping and name tags were inspired by these [name tags](https://now.u
 <svg height="300" width="300">
 <circle cx="50" cy="50" fill="yellow" id="smallCircle" r="20" stroke="black" stroke-width="4"/>
 <circle cx="150" cy="150" fill="blue" id="bigCircle" r="40" stroke="red" stroke-width="4"/><circle cr="30" cx="150" cy="150" fill="purple"/></svg>
+```
+# Adding generative art to the name tags
+## Ideas
+* different kinds of squiggles (change stroke, color etc.)
+* flags, e.g. are you allowed to be photographed
+* gradient
+* embedding images
+* patterns/shapes e.g. "barcode"
+* maybe the color palettes in the gradient could be prettier ([color palettes for python](https://jiffyclub.github.io/palettable/#finding-palettes))
+
+## Ways to get "data" for generative art
+* use unicode code points of name/pronouns
+* use hash of name/pronouns ([how inputs affect the hash](https://tantemalkah.at/2019/fempy_hashing/#/2/3))
+* pgp public key 
+
+## Inspiration
+* [bleeptrack](https://www.bleeptrack.de/) created [badges](https://chaos.social/@bleeptrack/101637293852959794) for a wikidata workshop
+* [badges](https://35c3.bleeptrack.de/) for 35c3
+* [sha2017 design generator](https://sha2017.org/design/)
 
 
