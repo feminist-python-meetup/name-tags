@@ -1,4 +1,4 @@
-# Name tag workshop (09-04-2019)
+# Name tag workshop (09.04.2019)
 # Quick start
 1. Clone this repository or download and unzip the zip file from Github
 2. Create and start a virtual environment
