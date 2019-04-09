@@ -6,10 +6,12 @@
 
 You should end up with the following files in your installation directory.
 ```
+.
+├── README.md
 ├── color_mapping.json
 ├── name_tag.py
-├── README.md
 ├── rendered
+│   ├── gradient.svg
 │   └── output.svg
 ├── requirements.txt
 └── templates
