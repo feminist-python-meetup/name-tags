@@ -171,8 +171,8 @@ if gradient:
         hashed_name = hashlib.sha1(name.encode("utf-8")).hexdigest()
         color_one, color_two, color_three = (
             color_map.get(pronouns, default_color),
-            hashed_name[:3],
-            hashed_name[3:6],
+            "c" + hashed_name[:5],
+            "c" + hashed_name[5:10],
         )
 
         top_left = soup.find(id="topLeft")
