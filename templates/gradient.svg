@@ -34,11 +34,11 @@
          style="stop-color:#ff0000;stop-opacity:1" />
       <stop
          id="middle"
-         offset="0.38652587"
+         offset="0.5"
          style="stop-color:#00cc99;stop-opacity:1" />
       <stop
          id="bottomRight"
-         offset="0.86584723"
+         offset="1"
          style="stop-color:#ff99ff;stop-opacity:1" />
     </linearGradient>
     <pattern
